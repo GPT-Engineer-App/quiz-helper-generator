@@ -8,7 +8,7 @@ const fadeIn = keyframes`
 `;
 
 const animationStyle = {
-  animation: `${fadeIn} 1s ease-in-out`,
+  animation: `${fadeIn} 2s ease-in-out`,
 };
 
 const Index = () => {
