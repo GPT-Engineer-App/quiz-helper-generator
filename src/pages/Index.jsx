@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { Box, Button, Container, FormControl, FormLabel, Input, VStack, Textarea, Heading, List, ListItem, ListIcon, useToast } from "@chakra-ui/react";
+import { Box, Button, Container, FormControl, FormLabel, Input, VStack, Textarea, Heading, List, ListItem, ListIcon, useToast, keyframes } from "@chakra-ui/react";
 import { FaPlus, FaCheckCircle } from "react-icons/fa";
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const animationStyle = {
+  animation: `${fadeIn} 1s ease-in-out`,
+};
 
 const Index = () => {
   const [question, setQuestion] = useState("");
@@ -71,7 +80,7 @@ const Index = () => {
       </Heading>
       <List spacing={5}>
         {questions.map((q, index) => (
-          <ListItem key={index} p={5} shadow="md" borderWidth="1px" borderRadius="md">
+          <ListItem key={index} p={5} shadow="md" borderWidth="1px" borderRadius="md" style={animationStyle}>
             <Heading size="md" mb={2}>
               {q.question}
             </Heading>
